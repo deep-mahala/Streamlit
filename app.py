@@ -49,14 +49,14 @@ if st.session_state.page == "home":
     st.title("🐾 Image Classification App")
     st.write("Welcome to the Image Classification App!")
     st.write("Use the sidebar to navigate to different sections.")
-    st.image("https://picsum.photos/400/300", caption="Random Image", use_column_width=True)
+    st.image("https://picsum.photos/400/300", caption="Random Image", use_container_width=True)
 
 # Upload Image Page
 elif st.session_state.page == "upload":
     st.title("📷 Upload Image")
     uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "png", "jpeg"])
     if uploaded_file:
-        st.image(uploaded_file, caption="Uploaded Image", use_column_width=True)
+        st.image(uploaded_file, caption="Uploaded Image", use_container_width=True)
         st.session_state["uploaded_image"] = uploaded_file
         st.success("Image uploaded successfully! Click 'Prediction' to see the result.")
 
@@ -75,6 +75,6 @@ elif st.session_state.page == "prediction":
         predicted_class = np.argmax(prediction, axis=1)
 
         st.write(f"**Predicted Class:** {class_names[predicted_class[0]]}")
-        st.image(uploaded_file, caption="Predicted Image", use_column_width=True)
+        st.image(uploaded_file, caption="Predicted Image", use_container_width=True)
     else:
         st.warning("No image uploaded! Please upload an image from the 'Upload Image' page.")
