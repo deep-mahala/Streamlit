@@ -15,13 +15,13 @@ MODEL_URL = "https://drive.google.com/uc?id=1jKPGaqxvtU7cZ51OQQG20hE1NDXUJAkV"
 @st.cache_resource
 def load_model():
    if not os.path.exists(MODEL_PATH):
-        
+        #st.info("Downloading model, please wait...")
         gdown.download(MODEL_URL, MODEL_PATH, quiet=False)
    model = tf.keras.models.load_model(MODEL_PATH)
    return model
 # model = tf.keras.models.load_model("best_model.hdf5")
 model = load_model()
-st.success("Model loaded successfully!")
+#st.success("Model loaded successfully!")
 class_names = ['Early Blight of Potato', 'Late Blight of Potato','Healthy']
 
 # Initialize session state for page navigation
