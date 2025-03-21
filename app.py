@@ -46,7 +46,7 @@ st.sidebar.button("Prediction", on_click=go_to_prediction)
 
 # Home Page
 if st.session_state.page == "home":
-    st.title("🐾 Image Classification App")
+    #st.title("🐾 Image Classification App")
     st.write("Welcome to the Image Classification App!")
     st.write("Use the sidebar to navigate to different sections.")
     #st.image("https://picsum.photos/400/300", caption="Random Image", use_container_width=True)
